@@ -5,6 +5,10 @@
 
 Surface crack image binary classification for bridge (infrastructure) scenes: **backbones (ResNet18 / MobileNetV3 / EfficientNet-B0)** + **optional attention (CBAM / CA)**, with **cross-entropy / weighted CE / Focal Loss**, **robust augmentation**, and **stratified splits / K-fold**, targeting SDNET2018-style `{D,P,W}` folder layouts.
 
+## Architecture
+
+![AttXNet architecture overview](misc/arch.png)
+
 This repo keeps actual experiment artifacts under `runs/` (metric JSON, configs, TensorBoard logs, etc.; `***.pth` weights may be omitted from the repo for size**—if missing, retrain with the same `config.json` to reproduce the pipeline). `experiments/` provides Bash batch entry points aligned with the paper / revision for one-shot reproduction of the experiment matrix.
 
 **Open a terminal at the repository root (this README’s directory) before running commands**, so paths to the `attxnet` package, `train.py`, and `--output_dir` stay consistent.
@@ -17,6 +21,7 @@ This repo keeps actual experiment artifacts under `runs/` (metric JSON, configs,
 | Path                | Description                                                                                                                  |
 | ------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
 | `attxnet/`          | Importable core library: `dataset`, `models`, `losses`                                                                       |
+| `misc/`             | Miscellaneous static assets (e.g. `arch.png` referenced above)                                                             |
 | `train.py`          | Train / eval entry: writes `results.json`, TensorBoard, `best_model.pth` / `last_model.pth`                                  |
 | `scripts/`          | Complexity stats, Grad-CAM, result summaries, `rev_*` aggregation, publication figures                                       |
 | `experiments/`      | **Batch experiment** Bash scripts (see dedicated section); run under **Git Bash / Linux / WSL**                              |
