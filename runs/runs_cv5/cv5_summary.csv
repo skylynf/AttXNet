@@ -1,0 +1,9 @@
+method,label,metric,mean,std,n_folds
+cv5_resnet18_baseline,cv5_resnet18_baseline,f1,0.7193400639217443,0.028138671308926427,5
+cv5_resnet18_baseline,cv5_resnet18_baseline,accuracy,0.9248164464023494,0.007702255409226238,5
+cv5_resnet18_baseline,cv5_resnet18_baseline,precision,0.8086058477508793,0.034316791443005305,5
+cv5_resnet18_baseline,cv5_resnet18_baseline,recall,0.6479012345679012,0.024666654308626496,5
+cv5_resnet18_full_cbam,cv5_resnet18_full_cbam,f1,0.7358907557856627,0.020003467138052528,5
+cv5_resnet18_full_cbam,cv5_resnet18_full_cbam,accuracy,0.927092511013216,0.005900041954175704,5
+cv5_resnet18_full_cbam,cv5_resnet18_full_cbam,precision,0.7996883914940204,0.04106269515955983,5
+cv5_resnet18_full_cbam,cv5_resnet18_full_cbam,recall,0.6834567901234568,0.0350669444911549,5

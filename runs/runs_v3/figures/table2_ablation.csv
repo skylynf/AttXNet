@@ -1,0 +1,5 @@
+Configuration,Accuracy,Precision,Recall,F1-score,ΔF1
+Baseline (CE),0.9276,0.8333,0.6414,0.7249,-
++ Robust Aug,0.9207,0.7276,0.7467,0.737,+1.21%
++ Robust Aug + Focal Loss,0.931,0.8007,0.7138,0.7548,+2.99%
++ Robust Aug + Focal Loss + CBAM (Ours),0.9325,0.8347,0.6809,0.75,+2.51%

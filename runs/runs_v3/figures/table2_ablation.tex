@@ -1,0 +1,14 @@
+\begin{table}
+\caption{Ablation study of the proposed method on ResNet18 backbone (SDNET2018-D).}
+\label{tab:ablation}
+\begin{tabular}{lrrrr}
+\toprule
+Configuration & Accuracy & Precision & Recall & F1-score \\
+\midrule
+Baseline (CE) & 0.9276 & 0.8333 & 0.6414 & 0.7249 \\
++ Robust Aug & 0.9207 & 0.7276 & 0.7467 & 0.7370 \\
++ Robust Aug + Focal Loss & 0.9310 & 0.8007 & 0.7138 & 0.7548 \\
++ Robust Aug + Focal Loss + CBAM (Ours) & 0.9325 & 0.8347 & 0.6809 & 0.7500 \\
+\bottomrule
+\end{tabular}
+\end{table}

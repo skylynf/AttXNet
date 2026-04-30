@@ -1,0 +1,4 @@
+Attention,Accuracy,Precision,Recall,F1-score
+None,0.931,0.8007,0.7138,0.7548
+CBAM,0.9325,0.8347,0.6809,0.75
+CA,0.9242,0.7578,0.7204,0.7386

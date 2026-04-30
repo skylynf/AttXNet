@@ -1,0 +1,4 @@
+Backbone,Baseline F1,Ours F1,ΔF1,Baseline Recall,Ours Recall,ΔRecall,Built-in SE
+ResNet18,0.7249,0.75,+2.51%,0.6414,0.6809,+3.95%,No
+MobileNetV3,0.6667,0.7168,+5.01%,0.6283,0.6743,+4.61%,Yes
+EfficientNet-B0,0.7406,0.7663,+2.57%,0.648,0.7171,+6.91%,Yes
