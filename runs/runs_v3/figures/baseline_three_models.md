@@ -1,7 +1,7 @@
-# Exp1 三骨干 Baseline 汇总（SDNET2018-D，CE）
+# Exp1 three-backbone baseline summary (SDNET2018-D, CE)
 
-- **Params / FLOPs / FPS (fwd)**：来自 `complexity.py`（thop，`attention=none`，输入 224×224），数据文件 `complexity.json`。
-- **FPS (test) / Lat_test**：来自各次实验 `results.json` 的测试阶段实测（与当时 GPU/驱动有关）。
+- **Params / FLOPs / FPS (fwd)**: from `complexity.py` (thop, `attention=none`, input 224×224), file `complexity.json`.
+- **FPS (test) / Lat_test**: measured during the test phase in each run's `results.json` (GPU/driver dependent).
 
 | Model | Params | FLOPs | FPS (fwd) | Lat_fwd (ms) | FPS (test) | Lat_test (ms) | Train loss (last) | Val loss (last) | Test loss | Acc | F1 |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -9,7 +9,7 @@
 | MobileNetV3 | 916.05K | 54.90M | 426.4 | 2.35 | 284.53 | 3.515 | 0.048793 | 0.437471 | 0.450299 | 0.9066 | 0.6667 |
 | EfficientNet-B0 | 3.97M | 384.54M | 240.6 | 4.16 | 211.36 | 4.731 | 0.002866 | 0.576922 | 0.542606 | 0.9325 | 0.7406 |
 
-## 完整列（含 Precision / Recall / best_val_F1）
+## Full columns (Precision / Recall / best_val_F1)
 
 | Model | Params | FLOPs | FPS_test | Latency_test_ms | Train_loss_final | Val_loss_final | Test_loss | Accuracy | Precision | Recall | F1 | Best_val_F1 |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |

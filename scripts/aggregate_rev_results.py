@@ -33,7 +33,7 @@ ORDER = [
 
 CLASS_NAMES = ["Non-crack", "Crack"]
 
-# 损失策略对比（与 revision 表 R1 前四行 / CE·WCE·robust CE·Focal 一致）
+# Loss-strategy comparison (matches revision Table R1 first four rows: CE / WCE / robust CE / Focal)
 LOSS_STRATEGY_SPECS: list[tuple[str, str]] = [
     ("rev_baseline_ce", "Baseline CE\n(+sampler)"),
     ("rev_wce", "Weighted CE"),
@@ -100,7 +100,7 @@ def plot_confusion_grid(
     if subplot_titles is not None and len(subplot_titles) != n:
         raise ValueError("subplot_titles must match len(exp_names)")
 
-    # 默认 3 列宽图；≤4 个实验时用 2×2 更易读
+    # Default wide 3-column grid; use 2×2 when ≤4 runs for readability
     if n <= 4:
         ncols, nrows = 2, int(math.ceil(n / 2))
     else:

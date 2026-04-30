@@ -1,7 +1,7 @@
 """
-三个 Exp1 baseline（ResNet18 / MobileNetV3 / EfficientNet-B0，D+CE）的汇总表：
-- 来自 results.json：测试集 FPS、单张推理延迟、最终 epoch 训练/验证 loss、测试 loss 与分类指标
-- 来自 complexity.json（thop + 纯前向 GPU 测速）：参数量、FLOPs、前向 FPS/延迟（与训练机器可能不同，见表注）
+Summary table for three Exp1 baselines (ResNet18 / MobileNetV3 / EfficientNet-B0, D+CE):
+- From results.json: test FPS, per-image latency, final-epoch train/val loss, test loss and classification metrics
+- From complexity.json (thop + pure forward GPU timing): params, FLOPs, forward FPS/latency (may differ from train GPU; see table notes)
 """
 
 import argparse
@@ -163,9 +163,9 @@ def main():
     df_pub.to_csv(csv_path, index=False)
 
     note = (
-        "- **Params / FLOPs / FPS (fwd)**：来自 `complexity.py`（thop，`attention=none`，输入 224×224），"
-        f"数据文件 `{comp_path.name}`。\n"
-        "- **FPS (test) / Lat_test**：来自各次实验 `results.json` 的测试阶段实测（与当时 GPU/驱动有关）。\n"
+        "- **Params / FLOPs / FPS (fwd)**: from `complexity.py` (thop, `attention=none`, input 224×224), "
+        f"file `{comp_path.name}`.\n"
+        "- **FPS (test) / Lat_test**: measured during the test phase in each run's `results.json` (GPU/driver dependent).\n"
     )
     df_detail = df_full[
         [
@@ -185,23 +185,26 @@ def main():
         ]
     ]
     md = (
-        "# Exp1 三骨干 Baseline 汇总（SDNET2018-D，CE）\n\n"
+        "# Exp1 three-backbone baseline summary (SDNET2018-D, CE)\n\n"
         + note
         + "\n"
         + df_to_markdown(df_pub)
         + "\n\n"
-        + "## 完整列（含 Precision / Recall / best_val_F1）\n\n"
+        + "## Full columns (Precision / Recall / best_val_F1)\n\n"
         + df_to_markdown(df_detail)
         + "\n"
     )
     md_path.write_text(md, encoding="utf-8")
 
-    print("\n=== Baseline 三模型（D + CE）===\n")
+    print("\n=== Baseline three models (D + CE) ===\n")
     print(df_pub.to_string(index=False))
     print(f"\n[Saved] {csv_path}")
     print(f"[Saved] {md_path}")
     if not cx_map:
-        print(f"\n[Warn] 未找到 {comp_path}，Params/FLOPs/FPS(fwd) 列为占位；可运行: python scripts/complexity.py --output_dir runs_v3/complexity")
+        print(
+            f"\n[Warn] {comp_path} not found; Params/FLOPs/FPS(fwd) are placeholders. Run: "
+            "python scripts/complexity.py --output_dir runs_v3/complexity"
+        )
 
 
 if __name__ == "__main__":

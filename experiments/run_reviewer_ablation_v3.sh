@@ -9,7 +9,7 @@
 #   6) ResNet18 + Focal Loss + CBAM + robust aug (full branch, via γ=2 in sweep)
 #   7–10) Focal Loss gamma sweep: 1.0, 2.0, 3.0, 5.0 (alpha=0.75 fixed)
 #
-# 若只想在两张 GPU 上并行跑「无RA仅FL」与「仅CBAM」，可用文末 echo 给出的两条命令。
+# To parallelize “Focal-only (no RA)” vs “CBAM-only” on two GPUs, use the echo commands at the end.
 #
 # After completion:
 #   ./.venv/bin/python scripts/analyze_results_v3.py --runs_dir ./runs_v3
@@ -105,7 +105,7 @@ echo "============================================"
 echo "Reviewer experiments completed."
 echo "Aggregate: \"$PYTHON\" scripts/analyze_results_v3.py --runs_dir $OUTPUT"
 echo ""
-echo "并行补跑（示例：终端 A 用 --gpu 1 跑无 RA 仅 FL；终端 B 用 --gpu 2 跑仅 CBAM）:"
+echo "Parallel rerun example (terminal A: --gpu 1 Focal-only no RA; terminal B: --gpu 2 CBAM-only):"
 echo "  cd \"$ROOT\" && \"$PYTHON\" train.py --data_root \"$DATA_ROOT\" --categories D --backbone resnet18 --attention none --loss focal --focal_alpha 0.75 --focal_gamma 2.0 --epochs \"$EPOCHS\" --batch_size \"$BATCH\" --img_size \"$IMG_SIZE\" --gpu 1 --output_dir \"$OUTPUT\" --exp_name rev_focal_no_ra"
 echo "  cd \"$ROOT\" && \"$PYTHON\" train.py --data_root \"$DATA_ROOT\" --categories D --backbone resnet18 --attention cbam --loss ce --epochs \"$EPOCHS\" --batch_size \"$BATCH\" --img_size \"$IMG_SIZE\" --gpu 2 --output_dir \"$OUTPUT\" --exp_name rev_cbam_only"
 echo "============================================"
