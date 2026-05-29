@@ -7,6 +7,7 @@ Surface crack image binary classification for bridge (infrastructure) scenes: **
 
 ## Architecture
 
+
 ![AttXNet architecture overview](misc/arch.png)
 
 This repo keeps actual experiment artifacts under `runs/` (metric JSON, configs, TensorBoard logs, etc.; `***.pth` weights may be omitted from the repo for size**—if missing, retrain with the same `config.json` to reproduce the pipeline). `experiments/` provides Bash batch entry points aligned with the paper / revision for one-shot reproduction of the experiment matrix.
