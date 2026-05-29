@@ -1,6 +1,6 @@
 # AttXNet
 
-> The content of this repository corresponds to a paper currently under review at *IEEE Access* and is provided solely for review purposes. 
+> AttXNet has been accepted by IEEE Access.
 
 
 Surface crack image binary classification for bridge (infrastructure) scenes: **backbones (ResNet18 / MobileNetV3 / EfficientNet-B0)** + **optional attention (CBAM / CA)**, with **cross-entropy / weighted CE / Focal Loss**, **robust augmentation**, and **stratified splits / K-fold**, targeting SDNET2018-style `{D,P,W}` folder layouts.
